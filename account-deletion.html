@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WikiWho? - Account & Data Deletion</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #121213;
+      color: #E0E0E0;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      line-height: 1.6;
+    }
+    h1 { color: #FFFFFF; font-size: 28px; }
+    h2 { color: #FFFFFF; font-size: 20px; margin-top: 32px; }
+    h3 { color: #FFFFFF; font-size: 16px; margin-top: 24px; }
+    a { color: #538D4E; }
+    p { margin: 12px 0; }
+    ul { margin: 12px 0; padding-left: 24px; }
+    li { margin: 6px 0; }
+    code { background: #1f1f22; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .updated { color: #6B6B6E; font-size: 13px; }
+    .callout {
+      background: #1f1f22;
+      border-left: 3px solid #538D4E;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #2a2a2e; vertical-align: top; }
+    th { color: #FFFFFF; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>WikiWho? Account & Data Deletion</h1>
+  <p class="updated">Last updated: April 2026</p>
+
+  <p>This page explains how to permanently delete your WikiWho? account and the personal data associated with it. We provide two ways to request deletion, both of which result in the same outcome: your account and all related data are removed.</p>
+
+  <div class="callout">
+    <strong>Developer:</strong> FMR Tech Solutions<br>
+    <strong>App:</strong> WikiWho? &mdash; trivia game (mobile)<br>
+    <strong>Contact:</strong> <a href="mailto:fmrtechsolutions@gmail.com">fmrtechsolutions@gmail.com</a>
+  </div>
+
+  <h2>Option 1 &mdash; Delete from inside the app (recommended)</h2>
+  <p>If you still have access to the WikiWho? app on your device, you can delete your account in a few taps:</p>
+  <ol>
+    <li>Open the WikiWho? app and sign in to the account you want to delete.</li>
+    <li>Go to the <strong>Profile</strong> tab.</li>
+    <li>Scroll to the bottom and tap <strong>Delete Account</strong>.</li>
+    <li>Read the confirmation dialog and confirm the deletion.</li>
+  </ol>
+  <p>Your account is deleted immediately. There is no recovery period &mdash; the action cannot be undone.</p>
+
+  <h2>Option 2 &mdash; Request deletion by email</h2>
+  <p>If you no longer have access to the app (for example, you uninstalled it or lost your device), send us an email and we will delete your account on your behalf:</p>
+  <ul>
+    <li><strong>To:</strong> <a href="mailto:fmrtechsolutions@gmail.com?subject=WikiWho%20Account%20Deletion%20Request">fmrtechsolutions@gmail.com</a></li>
+    <li><strong>Subject:</strong> <code>WikiWho Account Deletion Request</code></li>
+    <li><strong>Body:</strong> Include the email address (or username) associated with your WikiWho? account, and confirm that you are the account owner.</li>
+  </ul>
+  <p>We will verify the request and process the deletion within <strong>7 days</strong>, and confirm by email once it is done.</p>
+
+  <h2>What gets deleted</h2>
+  <p>When your account is deleted &mdash; whether from inside the app or via email &mdash; all of the following data is permanently removed from our systems:</p>
+  <ul>
+    <li>Your authentication record (email address, hashed password, sign-in provider link)</li>
+    <li>Your profile (username, avatar selection, friend code)</li>
+    <li>Your game history (Classic, Speed Round, Daily Challenge, and Challenge results)</li>
+    <li>Your achievements and unlocked themes</li>
+    <li>Your friendships and friend requests</li>
+    <li>Your 1v1 challenges (sent and received)</li>
+    <li>Your scores on global, friends, and daily leaderboards</li>
+  </ul>
+  <p>Deletion happens at the database level via cascading foreign keys, so every record tied to your account is removed in a single transaction. We do not keep backup copies of deleted accounts.</p>
+
+  <h2>What is retained (and why)</h2>
+  <p>We aim to delete everything tied to you. The only items we may retain are strictly limited and either anonymized or required by law:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Retention</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Aggregated, anonymous gameplay statistics (e.g., total games played across all users)</td>
+        <td>Indefinite</td>
+        <td>Cannot be linked back to you; used for product analytics</td>
+      </tr>
+      <tr>
+        <td>Server logs that may incidentally contain a request ID or IP</td>
+        <td>Up to 30 days</td>
+        <td>Security and abuse prevention; auto-rotated by our hosting provider (Supabase)</td>
+      </tr>
+      <tr>
+        <td>Email correspondence about the deletion request (Option 2 only)</td>
+        <td>Up to 6 months</td>
+        <td>Audit trail to prove the request was honored, in case of a follow-up dispute</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>None of these retained items can be used to re-create your account or identify you in the app after deletion.</p>
+
+  <h2>Third-party services</h2>
+  <p>WikiWho? stores user data on <a href="https://supabase.com">Supabase</a>. When you delete your account, the deletion propagates immediately to Supabase &mdash; your row in the authentication table and every related record is removed by the database. If you signed in with Google or Apple, deleting your WikiWho? account does not automatically revoke your Google or Apple sign-in. To revoke that link, please use your Google account or Apple ID settings.</p>
+
+  <h2>Children</h2>
+  <p>WikiWho? is not directed at children under 13. If you are a parent or guardian and believe your child has created an account, please contact <a href="mailto:fmrtechsolutions@gmail.com">fmrtechsolutions@gmail.com</a> and we will delete the account immediately.</p>
+
+  <h2>Changes to this page</h2>
+  <p>If our deletion process changes, we will update this page and the "Last updated" date at the top.</p>
+
+  <h2>Contact</h2>
+  <p>For any question about account deletion, contact us at: <a href="mailto:fmrtechsolutions@gmail.com">fmrtechsolutions@gmail.com</a></p>
+</body>
+</html>
